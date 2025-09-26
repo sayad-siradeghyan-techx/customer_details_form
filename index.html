@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forms</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Customer Details:</h1>
+            <form class="name">
+                <section id="contact-section">
+                    <fieldset class="fieldset-name">
+                        <legend class="heading">Full Name <span class="asterix">*</span></legend>
+                        <div class="flex-col">
+                            <input type="text" id="first-name">
+                            <label for="first-name">First Name</label>
+                        </div>
+                        <div class="flex-col">
+                            <input type="text" id="last-name">
+                            <label for="last-name">Last Name</label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="fieldset-address">
+                        <legend class="heading">Address <span class="asterix">*</legend>
+                        <div class="flex-col">
+                            <input type="text" id="street-address">
+                            <label for="street-address">Street Address</label>
+                        </div>
+                        <div class="flex-col">
+                            <input type="text" id="street-address-2">
+                            <label for="street-address-2">Street Address Line 2</label>
+                        </div>
+                        <div class="flex-row">
+                            <div class="flex-col">
+                                <input type="text" id="input-city">
+                                <label for="input-city">City</label>
+                            </div>
+                            <div class="flex-col">
+                                <input type="text" id="input-state">
+                                <label for="input-state">State / Province</label>
+                            </div>
+                        </div>
+                        <div class="flex-col">
+                            <input type="text" id="zip-code">
+                            <label for="zip-code">Postal / Zip Code</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="heading">Phone Number <span class="asterix">*</span></legend>
+                        <input type="text" id="input-number" placeholder="(000) 000-0000">
+                    </fieldset>
+                    <fieldset>
+                        <legend class="heading">E-mail</legend>
+                        <div class="flex-col">
+                            <input type="text" id="input-email" placeholder="ex: email@yahoo.com">
+                            <label for="input-email">example@example.com</label>
+                        </div>
+                    </fieldset>
+                </section>
+                <section id="feedback-section">
+                    <fieldset>
+                        <legend class="heading">How did you hear about us? <span class="asterix">*</span></legend>
+                        <select name="hear-about" id="hear-about">
+                            <option value="">Please Select</option>
+                            <option value="None">None</option>
+                            <option value="Newspaper">Newspaper</option>
+                            <option value="Internet">Internet</option>
+                            <option value="Magazine">Magazine</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="heading">Feedback about us:</legend>
+                        <!-- <label for="textarea-feedback">Feedback about us:</label> -->
+                        <textarea name="textarea-feedback" id="textarea-feedback"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="heading">Suggestions if any for further improvement:</legend>
+                        <textarea name="textarea-suggestion" id="textarea-suggestion"></textarea>
+                    </fieldset>
+                    <fieldset class="recommend-checkbox">
+                        <legend class="heading">Will you be willing to recommend us?</legend>
+                        <div class="flex-row">
+                            <input type="checkbox" id="checkbox-yes">
+                            <label for="checkbox-yes">Yes</label>
+                        </div>
+                        <div class="flex-row">
+                            <input type="checkbox" id="checkbox-maybe">
+                            <label for="checkbox-maybe">Maybe</label>
+                        </div>
+                        <div class="flex-row">
+                            <input type="checkbox" id="checkbox-no">
+                            <label for="checkbox-no">No</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="heading">Please give reference of any two people whom you feel: </legend>
+                        <table id="table-reference">
+                            <thead>
+                                <tr>
+                                    <th class="hidden"></th>
+                                    <th>Full Name</th>
+                                    <th>Address</th>
+                                    <th>Contact Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                    <td>2</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                </section>
+                <section class="form-end">
+                    <button type="submit" class="submit-btn">Submit</button>
+                </section>
+            </form>
+        </div>
+    </body>
+</html>
