@@ -10,68 +10,132 @@
     <body>
         <div class="container">
             <h1>Customer Details:</h1>
-            <form class="name">
+            <form class="form">
                 <section id="contact-section">
-                    <fieldset class="fieldset-name">
-                        <legend class="heading">Full Name <span class="asterix">*</span></legend>
-                        <div class="flex-col">
-                            <input type="text" id="first-name">
-                            <label for="first-name">First Name</label>
-                        </div>
-                        <div class="flex-col">
-                            <input type="text" id="last-name">
-                            <label for="last-name">Last Name</label>
-                        </div>
-                    </fieldset>
-                    <fieldset class="fieldset-address">
-                        <legend class="heading">Address <span class="asterix">*</legend>
-                        <div class="flex-col">
-                            <input type="text" id="street-address">
-                            <label for="street-address">Street Address</label>
-                        </div>
-                        <div class="flex-col">
-                            <input type="text" id="street-address-2">
-                            <label for="street-address-2">Street Address Line 2</label>
-                        </div>
-                        <div class="flex-row">
+                    <div class="fieldset-wrapper">
+                        <fieldset class="fieldset-name">
+                            <legend class="heading">Full Name <span class="asterix">*</span></legend>
                             <div class="flex-col">
-                                <input type="text" id="input-city">
-                                <label for="input-city">City</label>
+                                <input type="text" id="first-name">
+                                <label for="first-name">First Name</label>
                             </div>
                             <div class="flex-col">
-                                <input type="text" id="input-state">
-                                <label for="input-state">State / Province</label>
+                                <input type="text" id="last-name">
+                                <label for="last-name">Last Name</label>
                             </div>
+                        </fieldset>
+                        <div class="error-msg">
+                            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <g id="style=fill"> <g id="warning-circle"> <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 6.25C12.4142 6.25 12.75 6.58579 12.75 7L12.75 14.1046C12.75 14.5189 12.4142 14.8547 12 14.8547C11.5858 14.8547 11.25 14.5189 11.25 14.1047L11.25 7C11.25 6.58579 11.5858 6.25 12 6.25ZM12 16C11.4477 16 11 16.4477 11 17C11 17.5523 11.4477 18 12 18L12.01 18C12.5623 18 13.01 17.5523 13.01 17C13.01 16.4477 12.5623 16 12.01 16L12 16Z" fill="#fff"/> </g> </g> </g>
+                            </svg>
+                            <p id="name-error" class="error">This field is required.</p>
                         </div>
-                        <div class="flex-col">
-                            <input type="text" id="zip-code">
-                            <label for="zip-code">Postal / Zip Code</label>
+                    </div>
+                    <div class="fieldset-wrapper">
+                        <fieldset class="fieldset-address">
+                            <legend class="heading">Address <span class="asterix">*</legend>
+                            <div class="flex-col">
+                                <input type="text" id="street-address">
+                                <label for="street-address">Street Address</label>
+                            </div>
+                            <div class="flex-col">
+                                <input type="text" id="street-address-2">
+                                <label for="street-address-2">Street Address Line 2</label>
+                            </div>
+                            <div class="city-state">
+                                <div class="flex-col">
+                                    <input type="text" id="input-city">
+                                    <label for="input-city">City</label>
+                                </div>
+                                <div class="flex-col">
+                                    <input type="text" id="input-state">
+                                    <label for="input-state">State / Province</label>
+                                </div>
+                            </div>
+                            <div class="flex-col">
+                                <input type="text" id="input-zip">
+                                <label for="input-zip">Postal / Zip Code</label>
+                            </div>
+                        </fieldset>
+                        <div class="error-msg">
+                            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <g id="style=fill"> <g id="warning-circle"> <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 6.25C12.4142 6.25 12.75 6.58579 12.75 7L12.75 14.1046C12.75 14.5189 12.4142 14.8547 12 14.8547C11.5858 14.8547 11.25 14.5189 11.25 14.1047L11.25 7C11.25 6.58579 11.5858 6.25 12 6.25ZM12 16C11.4477 16 11 16.4477 11 17C11 17.5523 11.4477 18 12 18L12.01 18C12.5623 18 13.01 17.5523 13.01 17C13.01 16.4477 12.5623 16 12.01 16L12 16Z" fill="#fff"/> </g> </g> </g>
+                            </svg>
+                            <p id="address-error" class="error">This field is required.</p>
                         </div>
-                    </fieldset>
-                    <fieldset>
-                        <legend class="heading">Phone Number <span class="asterix">*</span></legend>
-                        <input type="text" id="input-number" placeholder="(000) 000-0000">
-                    </fieldset>
-                    <fieldset>
-                        <legend class="heading">E-mail</legend>
-                        <div class="flex-col">
-                            <input type="text" id="input-email" placeholder="ex: email@yahoo.com">
-                            <label for="input-email">example@example.com</label>
+                        <!-- <span id="address-error" class="error"></span> -->
+                    </div>
+                    <div class="fieldset-wrapper">
+                        <fieldset>
+                            <legend class="heading">Phone Number <span class="asterix">*</span></legend>
+                            <input type="text" id="input-number" placeholder="(000) 000-0000">
+                        </fieldset>
+                        <div class="error-msg">
+                            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <g id="style=fill"> <g id="warning-circle"> <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 6.25C12.4142 6.25 12.75 6.58579 12.75 7L12.75 14.1046C12.75 14.5189 12.4142 14.8547 12 14.8547C11.5858 14.8547 11.25 14.5189 11.25 14.1047L11.25 7C11.25 6.58579 11.5858 6.25 12 6.25ZM12 16C11.4477 16 11 16.4477 11 17C11 17.5523 11.4477 18 12 18L12.01 18C12.5623 18 13.01 17.5523 13.01 17C13.01 16.4477 12.5623 16 12.01 16L12 16Z" fill="#fff"/> </g> </g> </g>
+                            </svg>
+                            <p id="phone-error" class="error">This field is required.</p>
                         </div>
-                    </fieldset>
+                        <!-- <span id="phone-error" class="error"></span> -->
+                    </div>
+                    <div class="fieldset-wrapper">
+                        <fieldset>
+                            <legend class="heading">E-mail</legend>
+                            <div class="flex-col">
+                                <input type="text" id="input-email" placeholder=" ex: email@yahoo.com">
+                                <label for="input-email">example@example.com</label>
+                            </div>
+                        </fieldset>
+                        <div class="error-msg">
+                            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <g id="style=fill"> <g id="warning-circle"> <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 6.25C12.4142 6.25 12.75 6.58579 12.75 7L12.75 14.1046C12.75 14.5189 12.4142 14.8547 12 14.8547C11.5858 14.8547 11.25 14.5189 11.25 14.1047L11.25 7C11.25 6.58579 11.5858 6.25 12 6.25ZM12 16C11.4477 16 11 16.4477 11 17C11 17.5523 11.4477 18 12 18L12.01 18C12.5623 18 13.01 17.5523 13.01 17C13.01 16.4477 12.5623 16 12.01 16L12 16Z" fill="#fff"/> </g> </g> </g>
+                            </svg>
+                            <p id="email-error" class="error">This field is required.</p>
+                        </div>
+                        <!-- <span id="email-error" class="error"></span> -->
+                    </div>
                 </section>
                 <section id="feedback-section">
                     <fieldset>
                         <legend class="heading">How did you hear about us? <span class="asterix">*</span></legend>
                         <select name="hear-about" id="hear-about">
-                            <option value="">Please Select</option>
+                            <option value="" disabled selected>Please Select</option>
                             <option value="None">None</option>
                             <option value="Newspaper">Newspaper</option>
                             <option value="Internet">Internet</option>
                             <option value="Magazine">Magazine</option>
-                            <option value="Other">Other</option>
+                            <option value="Other">Other (please specify)</option>
                         </select>
+                        <span id="feedback-error" class="error"></span>
                     </fieldset>
+                    <div id="other-hidden" class="fieldset-wrapper">
+                        <fieldset>
+                            <legend class="heading">Other <span class="asterix">*</span></legend>
+                            <input type="text" id="other">
+                        </fieldset>
+                        <div class="error-msg">
+                            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <g id="style=fill"> <g id="warning-circle"> <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 6.25C12.4142 6.25 12.75 6.58579 12.75 7L12.75 14.1046C12.75 14.5189 12.4142 14.8547 12 14.8547C11.5858 14.8547 11.25 14.5189 11.25 14.1047L11.25 7C11.25 6.58579 11.5858 6.25 12 6.25ZM12 16C11.4477 16 11 16.4477 11 17C11 17.5523 11.4477 18 12 18L12.01 18C12.5623 18 13.01 17.5523 13.01 17C13.01 16.4477 12.5623 16 12.01 16L12 16Z" fill="#fff"/> </g> </g> </g>
+                            </svg>
+                            <p id="other-error" class="error">This field is required.</p>
+                        </div>
+                        <!-- <span id="other-error" class="error"></span> -->
+                    </div>
                     <fieldset>
                         <legend class="heading">Feedback about us:</legend>
                         <!-- <label for="textarea-feedback">Feedback about us:</label> -->
@@ -83,16 +147,16 @@
                     </fieldset>
                     <fieldset class="recommend-checkbox">
                         <legend class="heading">Will you be willing to recommend us?</legend>
-                        <div class="flex-row">
-                            <input type="checkbox" id="checkbox-yes">
+                        <div class="checkbox-wrapper">
+                            <input class="checkbox" type="checkbox" id="checkbox-yes">
                             <label for="checkbox-yes">Yes</label>
                         </div>
-                        <div class="flex-row">
-                            <input type="checkbox" id="checkbox-maybe">
+                        <div class="checkbox-wrapper">
+                            <input class="checkbox" type="checkbox" id="checkbox-maybe">
                             <label for="checkbox-maybe">Maybe</label>
                         </div>
-                        <div class="flex-row">
-                            <input type="checkbox" id="checkbox-no">
+                        <div class="checkbox-wrapper">
+                            <input class="checkbox" type="checkbox" id="checkbox-no">
                             <label for="checkbox-no">No</label>
                         </div>
                     </fieldset>
@@ -128,5 +192,6 @@
                 </section>
             </form>
         </div>
+        <script src="./main.js"></script>
     </body>
 </html>

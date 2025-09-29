@@ -10,11 +10,11 @@
 }
 body {
     font-family: Inter;
-    background-color: rgba(128, 128, 128, 0.139);
+    background-color: rgb(241, 245, 255);
 }
 h1 {
-    /* border-bottom: 1px solid grey; */
     padding-bottom: 30px;
+    margin-bottom: 20px;
 }
 .container {
     display: flex;
@@ -37,9 +37,11 @@ label {
     flex: 1;
 }
 .fieldset-name {
-    gap: 30px;
+    display: flex;
+    max-width: 100%;
+    gap: 20px;
     justify-content: center;
-    flex-grow: 1;
+
 }
 .fieldset-address {
     display: flex;
@@ -49,6 +51,7 @@ label {
 .heading {
     font-weight: bold;
     color: var(--main-text);
+    padding-top: 15px;
 }
 section {
     border-top: 1px solid grey;
@@ -56,16 +59,10 @@ section {
 .asterix {
     color: var(--dark-red);
 }
-.fieldset-name {
-    display: flex;
-    flex-direction: row;
-}
 .flex-col {
     display: flex;
     flex-direction: column;
-}
-#contact-section {
-    /* border-bottom: 1px solid grey; */
+    flex: 1;
 }
 #textarea-feedback, #textarea-suggestion {
     /* max-width: 100%; */
@@ -81,10 +78,10 @@ section {
     flex-direction: row;
 }
 #table-reference {
-    border: 1px solid lightgreen;
+    /* border: 1px solid lightgreen; */
     border-collapse: collapse;
 }
-tr, th, td {
+th, td {
     border: 1px solid lightgreen;
 }
 .hidden {
@@ -102,4 +99,56 @@ tr, th, td {
     height: 40px;
     max-width: 150px;
     width: 150px;
+    cursor: pointer;
+}
+input {
+    height: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.576);
+    border-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+}
+
+textarea {
+    border: 1px solid rgba(128, 128, 128, 0.576);
+    border-radius: 5px;
+}
+
+.city-state {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 20px;
+}
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    /* height: 30px; */
+}
+.checkbox {
+    width: 18px;
+}
+.error {
+    background-color: var(--dark-red);
+    color: white;
+    margin-left: 13px;
+}
+.fieldset-wrapper {
+    padding-bottom: 15px;
+}
+.red-corner {
+    border-color: var(--dark-red);
+}
+#other-hidden {
+    display: none;
+}
+.error-msg {
+    display: none;
+    align-items: center;
+    width: 200px;
+    background-color: var(--dark-red);
+    padding-left: 5px;
+    margin-left: 13px;
+    border-radius: 10px;
+    height: 30px;
 }
