@@ -16,6 +16,13 @@ h1 {
     padding-bottom: 30px;
     margin-bottom: 20px;
 }
+
+.table-input {
+    border: none;
+}
+.table-bckgrnd {
+    background-color: var(--light-blue);
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -78,11 +85,11 @@ section {
     flex-direction: row;
 }
 #table-reference {
-    /* border: 1px solid lightgreen; */
     border-collapse: collapse;
 }
 th, td {
-    border: 1px solid lightgreen;
+    border: 1px solid rgba(128, 128, 128, 0.359);
+    height: 35px;
 }
 .hidden {
     padding-right: 40px;

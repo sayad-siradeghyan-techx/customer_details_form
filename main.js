@@ -12,6 +12,20 @@ const email = document.getElementById("input-email");
 const hearAbout = document.getElementById("hear-about");
 const other = document.getElementById("other-hidden");
 const otherInput = document.getElementById("other");
+const tableName1 = document.getElementById("table-name1"); 
+const tableName2 = document.getElementById("table-name2");
+const tableAddress1 = document.getElementById("table-address1"); 
+const tableAddress2 = document.getElementById("table-address2");
+const tablePhone1 = document.getElementById("table-phone1"); 
+const tablePhone2 = document.getElementById("table-phone2"); 
+
+const feedback = document.getElementById("textarea-feedback");
+const suggestion = document.getElementById("textarea-suggestion");
+const checkboxYes = document.getElementById("checkbox-yes");
+const checkboxMaybe = document.getElementById("checkbox-maybe");
+const checkboxNo = document.getElementById("checkbox-no");
+
+
 
 
 const nameError = document.getElementById("name-error");
@@ -28,7 +42,6 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     let valid = true;
     if (firstName.value.trim().length === 0 || lastName.value.trim().length === 0) {
-        // nameError.textContent = "This field is required."
         errorMsg[0].style.display = "flex";
         container[0].style.backgroundColor = "rgb(255, 237, 237)";
         firstName.classList.add("red-corner");
@@ -41,7 +54,6 @@ form.addEventListener("submit", (e) => {
         });
     }
     if (!street1.value.trim().length || !city.value.trim().length || !state.value.trim().length || !zipCode.value.trim().length) {
-        // addressError.textContent = "This field is required.";
         errorMsg[1].style.display = "flex";
         container[1].style.backgroundColor = "rgb(255, 237, 237)";
         street1.classList.add("red-corner");
@@ -53,7 +65,6 @@ form.addEventListener("submit", (e) => {
     }
     const number = phone.value.trim();
     if (!number || isNaN(number)) {
-        // phoneError.textContent = "This field is required.";
         errorMsg[2].style.display = "flex";
         container[2].style.backgroundColor = "rgb(255, 237, 237)";
         phone.classList.add("red-corner");
@@ -61,7 +72,6 @@ form.addEventListener("submit", (e) => {
         valid = false;
     }
     if (email.value.trim() && !email.value.match(emailPattern)) {
-        // emailError.textContent = "Enter a valid e-mail address";
         errorMsg[3].style.display = "flex";
         container[3].style.backgroundColor = "rgb(255, 237, 237)";
         email.classList.add("red-corner");
@@ -71,7 +81,6 @@ form.addEventListener("submit", (e) => {
 
         
     if (hearAbout.value === "Other") {
-        // otherError.textContent = "This field is required."
         errorMsg[4].style.display = "flex";
         container[4].style.backgroundColor = "rgb(255, 237, 237)";
         other.classList.add("red-border");
@@ -79,7 +88,55 @@ form.addEventListener("submit", (e) => {
         valid = false;
     }
 
+    console.log(valid);
+    
     if (valid) {
+        let recommend = [];
+        let reference = [];
+        if (tableName1.value?.trim() || tableName1.value?.trim() || tablePhone1.value?.trim()) {
+            reference.push({ name: tableName1.value?.trim(),
+                address: tableAddress1.value?.trim(),
+                phone: tablePhone1.value?.trim(),
+            });
+        }
+        if (tableName2.value?.trim() || tableName2.value?.trim() || tablePhone2.value?.trim()) {
+            reference.push({ name: tableName2.value?.trim(),
+                address: tableAddress2.value?.trim(),
+                phone: tablePhone2.value?.trim(),
+            });
+        }
+        
+        if (checkboxYes.checked) {
+            recommend.push(checkboxYes.value);
+        }
+        if (checkboxMaybe.checked) {
+            recommend.push(checkboxMaybe.value);
+        }
+        if (checkboxNo.checked) {
+            recommend.push(checkboxNo.value);
+        }
+
+        const input = {
+            first_name1: firstName.value.trim(),
+            last_name1: lastName.value.trim(),
+            street_1: street1.value.trim(),
+            street_2: street2.value.trim(),
+            city1: city.value.trim(),
+            state1: state.value.trim(),
+            zipCode1: zipCode.value.trim(),
+            phone1: phone.value.trim(),
+            email1: email.value,
+            hearAbout1: other.value || hearAbout.value.trim(),
+            feedback1: feedback.value.trim(),
+            suggestion1: suggestion.value.trim(),
+            recommend1: recommend,
+            reference1: reference,
+        }
+
+        console.log(input);
+        
+
+        localStorage.setItem("user-input", JSON.stringify(input));
         form.reset();
     }
 });
@@ -106,15 +163,11 @@ hearAbout.addEventListener("change", () => {
       otherError.textContent = "";
     }
 });
-// other.addEventListener("change", () => {
-//     if (other.value.trim()) {}
-// });
 
 
 function validateName() {
     if (firstName.value.trim() && lastName.value.trim()) {
         errorMsg[0].style.display = "none";
-        // nameError.textContent = "";
         container[0].style.backgroundColor = "transparent";
         firstName.classList.remove("red-corner");
         lastName.classList.remove("red-corner");
@@ -123,7 +176,6 @@ function validateName() {
 
 function validateAddress() {
     if (street1.value.trim() && city.value.trim() && state.value.trim() && zipCode.value.trim()) {
-        // addressError.textContent = "";
         errorMsg[1].style.display = "none";
         container[1].style.backgroundColor = "transparent";
         street1.classList.remove("red-corner");
@@ -137,16 +189,13 @@ function validateNumber() {
     const number = phone.value.trim();
     if (number && !isNaN(number)) {
         errorMsg[2].style.display = "none";
-        // phoneError.textContent = "";
         container[2].style.backgroundColor = "transparent";
         phone.classList.remove("red-corner");
     }
 }
 
 function validateEmail() {
-    console.log(container);
     if (!email.value.trim() || email.value.match(emailPattern)) {
-        // emailError.textContent = "";
         errorMsg[3].style.display = "none";
         container[3].style.backgroundColor = "transparent";
         email.classList.remove("red-corner");
