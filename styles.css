@@ -72,7 +72,6 @@ section {
     flex: 1;
 }
 #textarea-feedback, #textarea-suggestion {
-    /* max-width: 100%; */
     height: 170px;
     width: 100%;
 }
@@ -158,4 +157,25 @@ textarea {
     margin-left: 13px;
     border-radius: 10px;
     height: 30px;
+}
+.modal {
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    left: 0;
+	position: fixed;
+	top: 0;
+}
+    
+.modal-content {
+    position: absolute;
+    right: 37%;
+    top: 35%;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 9px rgba(34, 34, 34, 0.16);;
+    max-width: 400px;
+    text-align: center;
+    width: 90%;
 }

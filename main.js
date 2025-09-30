@@ -18,6 +18,7 @@ const tableAddress1 = document.getElementById("table-address1");
 const tableAddress2 = document.getElementById("table-address2");
 const tablePhone1 = document.getElementById("table-phone1"); 
 const tablePhone2 = document.getElementById("table-phone2"); 
+const modal = document.querySelector(".modal");
 
 const feedback = document.getElementById("textarea-feedback");
 const suggestion = document.getElementById("textarea-suggestion");
@@ -105,7 +106,7 @@ form.addEventListener("submit", (e) => {
                 phone: tablePhone2.value?.trim(),
             });
         }
-        
+
         if (checkboxYes.checked) {
             recommend.push(checkboxYes.value);
         }
@@ -133,8 +134,7 @@ form.addEventListener("submit", (e) => {
             reference1: reference,
         }
 
-        console.log(input);
-        
+        modal.style.display = "flex";
 
         localStorage.setItem("user-input", JSON.stringify(input));
         form.reset();
